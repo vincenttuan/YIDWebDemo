@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,8 +24,7 @@ public class CarsServlet extends HttpServlet {
         
         String data = new Scanner(url.openStream(), "UTF-8").useDelimiter("\\A").next();
         
-        PrintWriter out = resp.getWriter();
-        out.println(data);
+        System.out.println(data);
         
         /*
         -1,-1,0,-1,0,-1<br>
@@ -33,7 +33,7 @@ public class CarsServlet extends HttpServlet {
         */
         
         String[] cars = data.split("<br>");
-        out.println(Arrays.toString(cars));
+        System.out.println(Arrays.toString(cars));
         
         List<String[]> carList = new ArrayList<>();  // 建立 carList  動態陣列（用來收集每一組 carArray）
         for(String carString : cars) {
@@ -42,7 +42,15 @@ public class CarsServlet extends HttpServlet {
             carList.add(carArray); // 將 carArray  放到 carList  動態陣列中
         }
         
-        out.println(carList);
+        System.out.println(carList);
+        
+        // 將 carList 傳遞給 /WEB-INF/view/cars.jsp 來呈現
+        // 建立請求分派器: 將請求轉發給指定路徑。Ex: /WEB-INF/view/cars.jsp
+        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/view/cars.jsp");
+        // 將資料放在 req 物件中
+        req.setAttribute("carList", carList);
+        // 進行轉發
+        rd.forward(req, resp);
         
     }
     

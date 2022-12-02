@@ -1,10 +1,7 @@
-<%-- 
-    Document   : cars
-    Created on : 2022年12月2日, 下午1:13:26
-    Author     : vincenttuan
---%>
+<%@ page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c"   uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +9,18 @@
         <title>Cars Page</title>
     </head>
     <body>
-        <h1>${ carList }</h1>
+        <table border="1">
+            <thead></thead>  
+            <tbody>
+                <c:forEach var="carArray" items="${ carList }">
+                    <tr>
+                    <c:forEach var="car" items="${ carArray }">
+                        <td>${car}</td>
+                    </c:forEach>
+                    </tr>    
+                </c:forEach>
+            </tbody>
+        </table>
+        
     </body>
 </html>

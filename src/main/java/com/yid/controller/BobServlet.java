@@ -8,8 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/demo/alice")
-public class AliceServlet extends HttpServlet {
+@WebServlet(urlPatterns = "/bob")
+public class BobServlet extends HttpServlet {
+    
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -18,14 +19,14 @@ public class AliceServlet extends HttpServlet {
         
         // resp：回應給 client 端來的資訊
         PrintWriter out = resp.getWriter();
-        out.print("Get Alice");
+        out.print("Get Bob");
     }
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
-        
-        
     }
+
+    
     
 }

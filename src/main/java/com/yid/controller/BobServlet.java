@@ -22,7 +22,9 @@ public class BobServlet extends HttpServlet {
         
         // resp：回應給 client 端來的資訊
         PrintWriter out = resp.getWriter();
-        out.print("Get Bob");
+        out.println("Get Bob");
+        out.println("name: " + name);
+        out.println("age: " + age);
     }
     
     @Override

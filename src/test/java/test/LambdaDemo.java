@@ -1,6 +1,7 @@
 package test;
 
 import java.util.Arrays;
+import java.util.IntSummaryStatistics;
 
 public class LambdaDemo {
     public static void main(String[] args) {
@@ -33,5 +34,12 @@ public class LambdaDemo {
                            .average()
                            .getAsDouble();
         System.out.println(avg);
+        
+        IntSummaryStatistics stat = Arrays.stream(scores).summaryStatistics();
+        System.out.println(stat.getAverage());
+        System.out.println(stat.getSum());
+        System.out.println(stat.getMax());
+        System.out.println(stat.getMin());
+        System.out.println(stat);
     }
 }

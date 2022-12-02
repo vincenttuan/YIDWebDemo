@@ -1,6 +1,7 @@
 package com.yid.controller;
 
 import java.io.IOException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,11 +15,14 @@ public class BMIServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doHandler(req, resp);
+        // 導向 bmi_form.html 的表單
+        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/bmi_form.html");
+        rd.forward(req, resp);
     }
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // 得到 form 表單資料
         doHandler(req, resp);
     }
     

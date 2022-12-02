@@ -15,8 +15,8 @@ public class BMIServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // 導向 bmi_form.html 的表單
-        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/bmi_form.html");
+        // 導向 bmi_form.jsp 的表單
+        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/view/bmi_form.jsp");
         rd.forward(req, resp);
     }
     
@@ -36,7 +36,15 @@ public class BMIServlet extends HttpServlet {
         double w = Double.parseDouble(myweight);
         double bmi = w / Math.pow(h/100, 2);
         // 將 bmi 結果回應(response)給 client 端
-        resp.getWriter().print(bmi);
+        System.out.println(bmi);
+        
+        // 導向 bmi_form.jsp 的表單
+        RequestDispatcher rd = req.getRequestDispatcher("/WEB-INF/view/bmi_form.jsp");
+        req.setAttribute("myname", myname);
+        req.setAttribute("myheight", myheight);
+        req.setAttribute("myweight", myweight);
+        req.setAttribute("bmi", bmi);
+        rd.forward(req, resp);
         
     }
     

@@ -3,7 +3,9 @@ package com.yid.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,6 +35,14 @@ public class CarsServlet extends HttpServlet {
         String[] cars = data.split("<br>");
         out.println(Arrays.toString(cars));
         
+        List<String[]> carList = new ArrayList<>();  // 建立 carList  動態陣列（用來收集每一組 carArray）
+        for(String carString : cars) {
+            // 每一筆 carString 字串的樣式：Ex: "-1,-1,0,-1,0,-1"
+            String[] carArray = carString.split(",");  // 變成陣列：[-1,-1,0,-1,0,-1]
+            carList.add(carArray); // 將 carArray  放到 carList  動態陣列中
+        }
+        
+        out.println(carList);
         
     }
     

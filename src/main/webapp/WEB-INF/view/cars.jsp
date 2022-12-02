@@ -9,14 +9,20 @@
         <title>Cars Page</title>
     </head>
     <body>
+        
         <table border="1">
-            <thead></thead>  
+            <thead>
+                <tr>
+                    <th>車號</th><th>目前位置</th><th>AGV訊號狀況</th><th>電池電量</th>
+                    <th>運行狀態</th><th>錯誤/功能碼</th>
+                </tr>
+            </thead>  
             <tbody>
                 <c:forEach var="carArray" items="${ carList }">
                     <tr>
-                    <c:forEach var="car" items="${ carArray }">
-                        <td>${car}</td>
-                    </c:forEach>
+                        <c:forEach var="car" items="${ carArray }">
+                            <td>${car}</td>
+                        </c:forEach>
                     </tr>    
                 </c:forEach>
             </tbody>

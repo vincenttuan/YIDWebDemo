@@ -5,12 +5,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cars Page</title>
     </head>
-    <body>
+    <body style="padding: 20px">
         
-        <table border="1">
+        <table class="pure-table pure-table-bordered">
             <thead>
                 <tr>
                     <th>車號</th><th>目前位置</th><th>AGV訊號狀況</th><th>電池電量</th>

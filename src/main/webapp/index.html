@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="./css/pure-min.css">
+        <link rel="stylesheet" href="./css/yid.css">
+    </head>
+    <body background="./image/bgimg.png" style="padding: 20px">
+        <!--<h1>元創智動股份有限公司</h1>-->
+        <img src="./image/logo.png" alt="image error">
+        <!--<div class="content"></div>-->
+        <br>
+        <div class="pure-form-message-inline">
+            <fieldset>
+                <legend>AGV 狀態</legend>
+                作業模式：<input type="text" value="系統派遣" readonly style="text-align: center"/><p>
+                工作狀態：<input type="text" value="待命中" readonly style="text-align: center"/><p>
+                目前任務：<input type="text" value="T1" readonly style="text-align: center"/><p>
+                即時位置：<input type="text" value="1002" readonly style="text-align: center"/><p>
+                目前電壓：<input type="text" value="100%" readonly style="text-align: center"/><p>
+            </fieldset>
+        </div>
+        <br>
+        <form class="pure-form-message-inline">
+<!--            <fieldset>
+                <legend>任務模式</legend>
+                <select>
+                    <option value="1">原貨架回</option>
+                    <option value="2">送貨架</option>
+                    <option value="3">取貨架</option>
+                    <option value="4">換貨架</option>
+                    <option value="5">先送後取</option>
+                    <option value="6">先取後送</option>
+                </select>
+            </fieldset>-->
+            <fieldset>
+                <legend></legend>
+                <table>
+                    <td>出<br>發<br>站</td>
+                    <td>
+                        <table class="pure-table pure-table-bordered" bgcolor='#FFA07A'>
+                            <tr>
+                                <td><button type="button" class="pure-button">S1</button>
+                                </td>
+                                <td><button type="button" class="pure-button">S2</button>
+                                </td>
+                                <td><button type="button" class="pure-button">S3</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><button type="button" class="pure-button">S4</button>
+                                </td>
+                                <td><button type="button" class="pure-button pure-button-primary">S5</button>
+                                </td>
+                                <td><button type="button" class="pure-button">S6</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </table>
+            </fieldset>
+            <fieldset>
+                <table>
+                    <td>抵<br>達<br>站</td>
+                    <td>
+                        <table class="pure-table pure-table-bordered" bgcolor='#FFA07A'>
+                            <tr>
+                                <td><button type="button" class="pure-button" style="background-color: burlywood;color: white">S1</button>
+                                </td>
+                                <td><button type="button" class="pure-button">S2</button>
+                                </td>
+                                <td><button type="button" class="pure-button">S3</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><button type="button" class="pure-button">S4</button>
+                                </td>
+                                <td><button type="button" class="pure-button pure-button-primary">S5</button>
+                                </td>
+                                <td><button type="button" class="pure-button">S6</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </table>
+            </fieldset>
+            <br>
+            <input type="submit" value="送出">
+        </form>
+        <br>
+        <fieldset class="pure-form-message-inline">
+            <legend>任務佇列</legend>
+            <table class="pure-table pure-table-bordered">
+                <thead>
+                    <tr>
+                        <th>任務順序</th>
+                        <th>任務模式</th>
+                        <th>倉庫站</th>
+                        <th>工作站</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>先取後送</td>
+                        <td>1005</td>
+                        <td>1017</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>先送後取</td>
+                        <td>1006</td>
+                        <td>1022</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>換貨架</td>
+                        <td>1015</td>
+                        <td>1015</td>
+                    </tr>
+                </tbody>
+            </table>
+        </fieldset>
+        <footer>
+            <p>©元創智動股份有限公司 All Rights Reserved</p>
+        </footer>
+    </body>
+</html>

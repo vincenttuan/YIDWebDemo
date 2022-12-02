@@ -14,8 +14,11 @@ public class BobServlet extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // req：接收 client 端來的資訊
-        
+        // req：接收 client 端來的資訊 (Ex: /bob?name=Java&age=29)
+        String name = req.getParameter("name");
+        String age  = req.getParameter("age");
+        System.out.println("name: " + name);
+        System.out.println("age: " + age);
         
         // resp：回應給 client 端來的資訊
         PrintWriter out = resp.getWriter();

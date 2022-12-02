@@ -1,7 +1,9 @@
 package com.yid.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.Scanner;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,7 +21,19 @@ public class CarsServlet extends HttpServlet {
         
         String data = new Scanner(url.openStream(), "UTF-8").useDelimiter("\\A").next();
         
-        resp.getWriter().print(data);
+        PrintWriter out = resp.getWriter();
+        out.println(data);
+        
+        /*
+        -1,-1,0,-1,0,-1<br>
+        1,1002,36,100,2,0<br>
+        -1,-1,0,-1,0,-1<br>
+        */
+        
+        String[] cars = data.split("<br>");
+        out.println(Arrays.toString(cars));
+        
+        
     }
     
 }

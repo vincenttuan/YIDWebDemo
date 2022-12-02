@@ -23,7 +23,12 @@ public class AliceServlet extends HttpServlet {
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // req：接收 client 端來的資訊
         
+        
+        // resp：回應給 client 端來的資訊
+        PrintWriter out = resp.getWriter();
+        out.print("Post Alice");
         
         
     }

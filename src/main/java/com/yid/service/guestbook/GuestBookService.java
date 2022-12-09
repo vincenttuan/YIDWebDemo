@@ -8,14 +8,13 @@ import java.util.List;
 
 public class GuestBookService {
     
-    private GuestBookDao guestBookDao = new GuestBookDao();
-    private CategoryDao categoryDao = new CategoryDao();
+    private final GuestBookDao guestBookDao = new GuestBookDao();
+    private final CategoryDao categoryDao = new CategoryDao();
     
     // 新增 GuestBook
     public boolean addGuestBook(GuestBook guestBook) {
         // 檢查動作...
         // 略... 
-        guestBook.setUsername("我是黑名單");
         return guestBookDao.add(guestBook) == 1;
     }
     

@@ -13,6 +13,9 @@ import javax.sql.DataSource;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+// MysqlDataSource 25種用法
+// https://www.programcreek.com/java-api-examples/?api=com.mysql.cj.jdbc.MysqlDataSource
+
 public class JdbcTemplateSample {
 
     public static void main(String[] args) throws Exception {

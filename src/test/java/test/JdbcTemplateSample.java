@@ -16,7 +16,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 public class JdbcTemplateSample {
 
     public static void main(String[] args) throws Exception {
-        Connection conn = null;
         String sql = "select * from guestbook";
 
         MysqlDataSource dataSource = new MysqlDataSource();
@@ -25,15 +24,8 @@ public class JdbcTemplateSample {
         dataSource.setUser("root");
         dataSource.setPassword("12345678");
         dataSource.setDatabaseName("YID");
-
-        try {
-            dataSource.setCharacterEncoding("utf-8");
-            conn = dataSource.getConnection();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        
+        dataSource.setCharacterEncoding("utf-8");
+            
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
         jdbcTemplate.setDataSource(dataSource);
         

@@ -16,8 +16,8 @@
             <fieldset>
                 <legend>GuestBook 表單</legend>
                     <!------------------------------------------------------------------------->  
-                    Id(Hidden)：<input type="text" name="id" value="${ guestBook.id }" readonly /><p>
-                    Mode(Hidden)：<input type="text" name="mode" value="${ mode }" readonly /><p>  
+                    <input type="hidden" name="id" value="${ guestBook.id }" readonly /><p>
+                    <input type="hidden" name="mode" value="${ mode }" readonly /><p>  
                     <!------------------------------------------------------------------------->    
                     Category：
                     <select id="categoryId" name="categoryId">

@@ -21,6 +21,9 @@ public class GuestBookController extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("utf-8");
+        resp.setCharacterEncoding("utf-8");
+        
         // 建立 GuestBook 物件
         GuestBook guestBook = new GuestBook();
         // 要接收是否有 mode ?
@@ -42,6 +45,9 @@ public class GuestBookController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("utf-8");
+        resp.setCharacterEncoding("utf-8");
+        
         String id = req.getParameter("id");
         String mode = req.getParameter("mode");
         Integer categoryId = Integer.valueOf(req.getParameter("categoryId"));
